@@ -4,7 +4,7 @@
 
 ### How to run:  
 
-_Local:_ 
+_Local:_  
 `yarn`  
 `yarn dev`  
 
