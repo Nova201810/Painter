@@ -5,11 +5,17 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta name="theme-color" content="#333333">
 
+	<script>
+		// use https://cdn.polyfill.io/v3/url-builder/
+		const modernBrowser = 'fetch' in window && 'assign' in Object;
+		if (!modernBrowser) {
+			document['wr'+'ite']('<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=fetch%2Cdefault%2CBlob"><\/script>')
+		}
+	</script>
+
 	%sapper.base%
 
-	<link rel="stylesheet" href="global.css">
-	<link rel="manifest" href="manifest.json" crossorigin="use-credentials">
-	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel="stylesheet" href="reset.css">
 
 	<!-- Sapper creates a <script> tag containing `src/client.js`
 	     and anything else it needs to hydrate the app and

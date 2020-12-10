@@ -46,13 +46,14 @@
 		text-decoration: none;
 		padding: 1em 0.5em;
 		display: block;
+		font-weight: 600;
 	}
 </style>
 
 <nav>
 	<ul>
 		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href={ROUTES.INDEX}>Главная</a></li>
-	<li><a aria-current="{segment === ROUTES.NEW ? 'page' : undefined}" href={ROUTES.NEW}>Добавить рисунок</a></li>
-	<li><a aria-current="{segment === ROUTES.PICTURES ? 'page' : undefined}" href={ROUTES.PICTURES}>Мои рисунки</a></li>
+		<li><a aria-current="{segment === ROUTES.NEW ? 'page' : undefined}" href={ROUTES.NEW}>Добавить рисунок</a></li>
+		<li><a aria-current="{segment === ROUTES.PICTURES ? 'page' : undefined}" href={ROUTES.PICTURES}>Мои рисунки</a></li>
 	</ul>
 </nav>
