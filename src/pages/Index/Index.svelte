@@ -31,7 +31,7 @@
 
 <figure>
 	<img alt="Рисунок карандашей" src={lead}>
-	<figcaption><h2>Приветствуем вас в сервисе онлайн рисования!</h2></figcaption>
+	<figcaption><h2>Приветствуем вас в сервисе для рисования!</h2></figcaption>
 </figure>
 
 <ul class="Info">

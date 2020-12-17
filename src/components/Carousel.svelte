@@ -1,4 +1,7 @@
 <script lang="ts">
+  import LeftArrow from 'images/left-arrow.svelte';
+  import RightArrow from 'images/right-arrow.svelte';
+
   export let paints: any[];
 
   let currentId = 0;
@@ -13,58 +16,45 @@
 <style>
   .Carousel {
     display: flex;
-    overflow: hidden;
-    white-space: nowrap;
     width: 628px;
     margin-top: 64px;
-    margin-left: -48px;
-    border: 4px solid #a5a5a5;
-    border-radius: 16px;
+    margin-left: -64px;
   }
   .Carousel__button {
-    height: 48px;
-    width: 48px;
-    margin-top: auto;
-    margin-bottom: auto;
-    border: 2px solid #cecaca;
-    border-radius: 50%;
-    font-size: 24px;
-    color: #eaeaea;
-    background-color: #a5a5a5;
+    height: 64px;
+    width: 64px;
+    margin: auto 16px;
+    padding: 0;
+    border: 0;
+    background-color: inherit;
   }
   .Carousel__button:hover {
     cursor: pointer;
   }
   .Carousel__button:disabled {
-    display: none;
+    visibility: hidden;
   }
-  .Carousel__buttonWrapper {
-    display: flex;
-    width: 64px;
-    padding-left: 8px;
-    padding-right: 8px;
-    background-color: #eaeaea;
+  .Carousel__image {
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
   }
 </style>
 
 <div class="Carousel">
-  <div class="Carousel__buttonWrapper">
-    <button
-      class="Carousel__button"
-      on:click={handleButtonPreviousClick}
-      disabled={currentId === 0}
-    >
-      {'<'}
-    </button>
-  </div>
-  <img src={paints[currentId]} alt={`Рисунок ${currentId}`}/>
-  <div class="Carousel__buttonWrapper">
-    <button
-      class="Carousel__button"
-      on:click={handleButtonNextClick}
-      disabled={currentId === paints.length - 1}
-    >
-      {'>'}
-    </button>
-  </div>
+  <button
+    class="Carousel__button"
+    on:click={handleButtonPreviousClick}
+    disabled={currentId === 0}
+  >
+    <LeftArrow />
+  </button>
+  <img class="Carousel__image" src={paints[currentId]} alt={`Рисунок ${currentId}`}/>
+  <button
+    class="Carousel__button"
+    on:click={handleButtonNextClick}
+    disabled={currentId === paints.length - 1}
+  >
+    <RightArrow />
+  </button>
 </div>
